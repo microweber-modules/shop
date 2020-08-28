@@ -1,0 +1,26 @@
+{
+  "name": "mw-internal/modules-shop",
+  "description": "Shop",
+  "license": "MIT",
+  "version": "0.3",
+  "homepage": "https://gitlab.com/mw-internal/modules/shop",
+  "authors": [
+       {
+      "name": "Peter Ivanov",
+      "email": "peter@microweber.com"
+    },
+     {
+      "name": "Petko Yovchevski",
+      "email": "petko@microweber.com"
+    },
+    {
+      "name": "Bozhidar Slaveykov",
+      "email": "bobi@microweber.com"
+    }
+  ],
+  "keywords": [
+    "shop"
+  ],
+  "type": "microweber-module",
+  "target-dir": "shop"
+}
