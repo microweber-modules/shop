@@ -1,9 +1,9 @@
 {
-  "name": "mw-internal/modules-shop",
+  "name": "microweber-modules/shop",
   "description": "Shop",
   "license": "MIT",
   "version": "0.3",
-  "homepage": "https://gitlab.com/mw-internal/modules/shop",
+  "homepage": "https://github.com/microweber-modules/shop",
   "authors": [
        {
       "name": "Peter Ivanov",
