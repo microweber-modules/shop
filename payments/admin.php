@@ -114,14 +114,14 @@ $payment_modules = get_modules('type=payment_gateway');
 ?>
 
 <div class="card bg-none style-1 mb-0">
-    <div class="card-header">
+    <div class="card-header px-0">
         <h5>
             <i class="mdi mdi-cash-usd-outline text-primary mr-3"></i> <strong>Payment methods</strong>
         </h5>
         <div></div>
     </div>
 
-    <div class="card-body pt-3">
+    <div class="card-body pt-3 px-0">
         <p class="text-muted">Enable and set up the payment method your customers will use to pay</p>
 
         <div id="db-payment-methods">

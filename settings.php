@@ -53,18 +53,18 @@ if (isset($_GET['group']) and $_GET['group']) {
 </div>
 
 <div class="card bg-none style-1 mb-0">
-    <div class="card-header">
+    <div class="card-header px-0">
         <h5><i class="mdi mdi-shopping text-primary mr-3"></i> <strong><?php _e("Shop settings"); ?></strong></h5>
         <div>
 
         </div>
     </div>
 
-    <div class="card-body pt-3">
+    <div class="card-body pt-3 px-0">
         <div class="card style-1 mb-3">
             <div class="card-body pt-3 px-5">
                 <div class="row select-settings">
-                    <div class="col-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <a href="?group=general" class="d-flex my-3">
                             <div class="icon-holder"><i class="mdi mdi-cart-outline mdi-20px"></i></div>
                             <div class="info-holder">
@@ -76,7 +76,7 @@ if (isset($_GET['group']) and $_GET['group']) {
 
                     <?php event_trigger('mw.admin.shop.settings.menu', $params); ?>
 
-                    <div class="col-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <a href="?group=invoices" class="d-flex my-3">
                             <div class="icon-holder"><i class="mdi mdi-cash-register mdi-20px"></i></div>
                             <div class="info-holder">
@@ -86,7 +86,7 @@ if (isset($_GET['group']) and $_GET['group']) {
                         </a>
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <a href="?group=mail" class="d-flex my-3">
                             <div class="icon-holder"><i class="mdi mdi-email-edit-outline mdi-20px"></i></div>
                             <div class="info-holder">
@@ -96,7 +96,7 @@ if (isset($_GET['group']) and $_GET['group']) {
                         </a>
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
                         <a href="?group=other" class="d-flex my-3">
                             <div class="icon-holder"><i class="mdi mdi-cog mdi-20px"></i></div>
                             <div class="info-holder">
