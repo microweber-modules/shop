@@ -60,7 +60,7 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
             <div id="orders_stat" style="height: 250px;"></div>
         </div>
     <?php else: ?>
-        <div class="no-items-found posts">
+        <div class="no-items-found orders">
             <div class="row">
                 <div class="col-12">
                     <div class="no-items-box" style="background-image: url('<?php print modules_url(); ?>microweber/api/libs/mw-ui/assets/img/no_orders.svg'); ">
