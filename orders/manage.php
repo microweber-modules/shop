@@ -152,18 +152,20 @@
         <div class="card-header">
             <h5><i class="mdi mdi-shopping text-primary mr-3"></i> <strong>List of orders</strong></h5>
 
-            <div class="js-search-by d-inline-block">
-                <div class="js-search-by-keywords">
-                    <div class="form-inline">
-                        <div class="input-group mb-0 prepend-transparent mx-2">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text px-1"><i class="mdi mdi-magnify"></i></span>
+            <div class="js-hide-when-no-items">
+                <div class="js-search-by d-inline-block">
+                    <div class="js-search-by-keywords">
+                        <div class="form-inline">
+                            <div class="input-group mb-0 prepend-transparent mx-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text px-1"><i class="mdi mdi-magnify"></i></span>
+                                </div>
+
+                                <input type="text" class="form-control form-control-sm" style="width: 100px;" id="orders-search-field" placeholder="<?php _e("Search"); ?>"/>
                             </div>
 
-                            <input type="text" class="form-control form-control-sm" style="width: 100px;" id="orders-search-field" placeholder="<?php _e("Search"); ?>"/>
+                            <button type="button" class="btn btn-primary btn-sm btn-icon" onclick="mw.url.windowHashParam('search',$(this).prev().find('input').val())"><i class="mdi mdi-magnify"></i></button>
                         </div>
-
-                        <button type="button" class="btn btn-primary btn-sm btn-icon" onclick="mw.url.windowHashParam('search',$(this).prev().find('input').val())"><i class="mdi mdi-magnify"></i></button>
                     </div>
                 </div>
             </div>

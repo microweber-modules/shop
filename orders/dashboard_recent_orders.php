@@ -43,6 +43,4 @@ $shop_disabled = get_option('shop_disabled', 'website') == 'y';
             </div>
         </div>
     </div>
-
-
 <?php endif; ?>

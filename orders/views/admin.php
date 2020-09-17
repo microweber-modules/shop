@@ -41,12 +41,11 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
             ?>
 
             <?php if (!$hide_ctrls): ?>
-                <div class="mx-auto mt-5 text-center">
+                <div class="mx-auto mt-5 text-center pagination">
                     <?php print paging('limit=10&no_wrap=true&class=mw-paging mw-paging-medium inline-block&num=' . $orders_page_count . '&current_page=' . $current_page) ?>
                 </div>
             <?php endif; ?>
         </div>
-
 
         <?php if (!$hide_ctrls): ?>
             <div class="my-3">
