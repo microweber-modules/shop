@@ -150,7 +150,9 @@
 
     <div class="card style-1">
         <div class="card-header">
-            <h5><i class="mdi mdi-shopping text-primary mr-3"></i> <strong>List of orders</strong></h5>
+            <h5><i class="mdi mdi-shopping text-primary mr-3"></i> <strong>List of orders</strong>
+                <a href="javascript:mw_admin_add_order_popup()" class="btn btn-sm btn-outline-success ml-2"><?php print _e('Add new order'); ?></a>
+            </h5>
 
             <div class="js-hide-when-no-items">
                 <div class="js-search-by d-inline-block">
@@ -172,9 +174,6 @@
         </div>
         <div class="card-body  pt-3 pb-0">
             <div class="manage-toobar d-flex justify-content-between align-items-center">
-                <div>
-                    <a href="javascript:mw_admin_add_order_popup()" class="btn btn-sm btn-success"><?php print _e('Add new order'); ?></a>
-                </div>
                 <?php if ($is_orders != 0) { ?>
                     <div id="cartsnav">
                         <a href="#orderstype=completed" class="btn btn-link btn-sm px-0 text-dark active"><?php _e("Completed orders"); ?></a>
@@ -182,7 +181,7 @@
                     </div>
 
                     <div class="js-table-sorting text-right my-1 d-flex justify-content-center justify-content-sm-end align-items-center">
-                        <span><?php _e("Sort By"); ?>: &nbsp;</span>
+                        <small><?php _e("Sort By"); ?>: &nbsp;</small>
 
                         <div class="d-inline-block mx-1">
                             <button type="button" class="js-sort-btn btn btn-outline-secondary btn-sm icon-right" data-sort-type="created_at" onclick="ordersSort({id:'shop-orders', el:this});">

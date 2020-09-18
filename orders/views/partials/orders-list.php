@@ -1,5 +1,5 @@
 <?php if ($orders): ?>
-    <p class="bold p-b-10 p-t-10 m-t-20"><?php print _e('List of all orders'); ?></p>
+    <label class="control-label mb-3 mt-3"><?php print _e('All orders'); ?></label>
 
     <?php foreach ($orders as $item) : ?>
         <?php $is_order = true; ?>
