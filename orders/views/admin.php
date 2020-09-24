@@ -1,5 +1,4 @@
 <?php
-
 use MicroweberPackages\View\View;
 
 $hide_ctrls = false;
@@ -9,10 +8,10 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
 ?>
 
 <div id="mw-order-table-holder">
-    <?php if ($orders_type == 'completed' and isset($orders) and is_array($orders)) : ?>
+    <?php if ($orders_type == 'completed' and isset($orders) and is_array($orders) and !empty($orders)) : ?>
         <div class="orders-holder" id="shop-orders">
             <?php
-            if ($has_new and ! $current_page) {
+            if ($has_new and !$current_page) {
                 $view_file = __DIR__ . '/partials/orders-list.php';
 
                 $view = new View($view_file);
@@ -23,33 +22,7 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
             }
             ?>
 
-            <?php if (!$has_new and ! $current_page and ! $orders and ! $hide_ctrls): ?>
-                <div class="no-items-found orders">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="no-items-box" style="background-image: url('<?php print modules_url(); ?>microweber/api/libs/mw-ui/assets/img/no_orders.svg'); ">
-                                <h4>You don’t have any orders yet</h4>
-                                <p>Here you can track your orders</p>
-                                <br/>
-                                <a href="javascript:mw_admin_add_order_popup()" class="btn btn-primary btn-rounded">Add order</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        $(document).ready(function () {
-                            $('body > #mw-admin-container > .main').removeClass('show-sidebar-tree');
-                        });
-                    </script>
-
-                    <script>
-                        $(document).ready(function () {
-                            $('.manage-toobar').hide();
-                            $('.top-search').hide();
-                        });
-                    </script>
-                </div>
-
+            <?php if (!$has_new and !$current_page and !$orders and !$hide_ctrls): ?>
                 <div class="icon-title">
                     <i class="mdi mdi-shopping"></i> <h5><?php _e('You don\'t have any orders yet.'); ?></h5>
                 </div>
@@ -68,11 +41,12 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
             ?>
 
             <?php if (!$hide_ctrls): ?>
-                <div class="mx-auto mt-5 text-center pagination">
+                <div class="mx-auto mt-5 text-center">
                     <?php print paging('limit=10&no_wrap=true&class=mw-paging mw-paging-medium inline-block&num=' . $orders_page_count . '&current_page=' . $current_page) ?>
                 </div>
             <?php endif; ?>
         </div>
+
 
         <?php if (!$hide_ctrls): ?>
             <div class="my-3">
@@ -80,36 +54,42 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
                 <a class="btn btn-sm btn-secondary" href="<?php echo api_url('shop/export_orders'); ?>"><?php _e("Excel"); ?></a>
             </div>
         <?php endif; ?>
-    <?php elseif ($orders_type == 'carts' and isset($orders) and is_array($orders)) : ?>
+    <?php elseif ($orders_type == 'carts' and isset($orders) and is_array($orders) and !empty($orders)) : ?>
         <label class="mw-ui-label"><?php _e("Abandoned Carts Section helps you analyze why some customers aren't checking out."); ?></label>
         <div class="mw-ui-box-content">
             <div id="orders_stat" style="height: 250px;"></div>
         </div>
     <?php else: ?>
         <div class="no-items-found orders">
-            <div class="row">
-                <div class="col-12">
-                    <div class="no-items-box" style="background-image: url('<?php print modules_url(); ?>microweber/api/libs/mw-ui/assets/img/no_orders.svg'); ">
-                        <h4>You don’t have any orders yet</h4>
-                        <p>Here you can track your orders</p>
-                        <br/>
-                        <a href="javascript:mw_admin_add_order_popup()" class="btn btn-primary btn-rounded">Add order</a>
+            <?php if (isset($params['data-parent-module']) AND $params['data-parent-module'] != 'shop/orders/dashboard_recent_orders'): ?>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="no-items-box" style="background-image: url('<?php print modules_url(); ?>microweber/api/libs/mw-ui/assets/img/no_orders.svg'); ">
+                            <h4>You don’t have any orders yet</h4>
+                            <p>Here you can track your orders</p>
+                            <br/>
+                            <a href="javascript:mw_admin_add_order_popup()" class="btn btn-primary btn-rounded">Add order</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php else: ?>
+                <script>
+                    $(document).ready(function () {
+                        $('body > #mw-admin-container > .main').removeClass('show-sidebar-tree');
+                    });
+                </script>
 
-            <script>
-                $(document).ready(function () {
-                    $('body > #mw-admin-container > .main').removeClass('show-sidebar-tree');
-                });
-            </script>
+                <script>
+                    $(document).ready(function () {
+                        $('.manage-toobar').hide();
+                        $('.top-search').hide();
+                    });
+                </script>
 
-            <script>
-                $(document).ready(function () {
-                    $('.manage-toobar').hide();
-                    $('.top-search').hide();
-                });
-            </script>
+                <div class="icon-title">
+                    <i class="mdi mdi-shopping"></i> <h5><?php _e('You don\'t have any orders yet.'); ?></h5>
+                </div>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 </div>
