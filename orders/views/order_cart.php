@@ -195,6 +195,9 @@ if (isset($ord['order_id']) and $ord['order_id'] != false) {
         </div>
     </div>
 <?php else: ?>
+    <?php
+        $subtotal = 0;
+    ?>
     <div class="row">
         <div class="info-table col-md-8 col-lg-6 col-xl-5 ml-auto">
             <div class="row d-none">
