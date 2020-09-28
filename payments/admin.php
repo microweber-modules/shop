@@ -47,7 +47,7 @@
         var modal = mw.dialog({
             content: '<form id="'+formId+'">' + html + '</form>',
             onremove: function () {
-                html = modal.container.html();
+                html = modal.container.innerHTML;
                 $(mwd.body).removeClass('paymentSettingsModal')
             },
             onopen: function () {
@@ -61,7 +61,7 @@
 
         mw.options.form('#' + formId, function () {
             mw.notification.success("<?php _ejs("Shop settings are saved"); ?>.");
-            mw.reload_module_everywhere("shop/settings");
+            mw.reload_module_everywhere("shop/payments/admin");
         });
     }
 
@@ -168,14 +168,14 @@ $payment_modules = get_modules('type=payment_gateway');
                                     </div>
                                 </div>
 
-                                <div class="js-modal-content" style="display: none;">
+                                <template class="js-modal-content" style="display: none;">
                                     <h5 class="mb-0"><?php _e('Enter your API settings'); ?></h5>
                                     <small class="text-muted mb-3 d-block">Ask your payment provider for this information and put it below</small>
 
                                     <div class="mw-set-payment-gw-options">
                                         <module type="<?php print $payment_module['module'] ?>" view="admin"/>
                                     </div>
-                                </div>
+                                </template>
                             </div>
                         </div>
                         <script>
