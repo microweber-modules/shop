@@ -1,6 +1,4 @@
 <?php if ($orders): ?>
-    <label class="control-label mb-3 mt-3"><?php print _e('All orders'); ?></label>
-
     <?php foreach ($orders as $item) : ?>
         <?php $is_order = true; ?>
         <?php include module_dir('admin/notifications') . 'notif_order.php'; ?>

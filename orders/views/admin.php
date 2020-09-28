@@ -11,9 +11,13 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
     <?php if ($orders_type == 'completed' and isset($orders) and is_array($orders) and !empty($orders)) : ?>
         <div class="orders-holder" id="shop-orders">
             <?php
+            if ($has_new and !$current_page): ?>
+                <label class="control-label mb-3 mt-3"><?php print _e('New orders'); ?></label>
+            <?php endif; ?>
+            <?php
             if ($has_new and !$current_page) {
                 $view_file = __DIR__ . '/partials/orders-list.php';
-
+                $params['new'] = true;
                 $view = new View($view_file);
                 $view->assign('params', $params);
 
@@ -28,10 +32,12 @@ if (isset($params['hide-controlls']) and $params['hide-controlls']) {
                 </div>
             <?php endif; ?>
 
+            <label class="control-label mb-3 mt-3"><?php print _e('All orders'); ?></label>
+
             <?php
             if ($orders) {
                 $view_file = __DIR__ . '/partials/orders-list.php';
-
+                $params['new'] = false;
                 $view = new View($view_file);
                 $view->assign('params', $params);
 
