@@ -46,7 +46,7 @@
     </script>
 
     <div class="main-toolbar">
-        <a href="#vieworder=0" class="btn btn-link text-silver" data-toggle="tooltip" data-title="Back to list"><i class="mdi mdi-chevron-left"></i> <?php _e('Back to orders'); ?></a>
+        <a href="#vieworder=0" class="btn btn-link text-silver px-0" data-toggle="tooltip" data-title="Back to list"><i class="mdi mdi-chevron-left"></i> <?php _e('Back to orders'); ?></a>
     </div>
 
     <div class="card bg-light style-1 mb-3">

@@ -47,11 +47,6 @@ if (isset($_GET['group']) and $_GET['group']) {
     <?php return; ?>
 <?php endif ?>
 
-
-<div class="main-toolbar">
-    <a href="#" class="btn btn-link text-silver"><i class="mdi mdi-chevron-left"></i> Shop</a>
-</div>
-
 <div class="card bg-none style-1 mb-0">
     <div class="card-header px-0">
         <h5><i class="mdi mdi-shopping text-primary mr-3"></i> <strong><?php _e("Shop settings"); ?></strong></h5>
