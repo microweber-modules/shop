@@ -3,6 +3,10 @@
         <?php $is_order = true; ?>
         <?php include module_dir('admin/notifications') . 'notif_order.php'; ?>
     <?php endforeach; ?>
+
+    <div class="text-center">
+        <a href="<?php print admin_url('view:shop/action:orders'); ?>" class="btn btn-link"><?php _e("See all orders"); ?></a>
+    </div>
 <?php else: ?>
     <?php if (isset($params['data-parent-module']) AND $params['data-parent-module'] != 'shop/orders/dashboard_recent_orders'): ?>
         <div class="no-items-found orders">
