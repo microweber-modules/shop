@@ -39,7 +39,7 @@ $shop_disabled = get_option('shop_disabled', 'website') == 'y';
 
         <div class="card-body">
             <div class="orders-holder" id="shop-orders">
-                <module type="shop/orders/admin" limit="5" hide-controlls="true" intersect-new-orders="true"/>
+                <module type="shop/orders/admin" limit="5" hide-controls="true" intersect-new-orders="true"/>
             </div>
         </div>
     </div>

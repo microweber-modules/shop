@@ -3,7 +3,8 @@
         <?php $is_order = true; ?>
         <?php include module_dir('admin/notifications') . 'notif_order.php'; ?>
     <?php endforeach; ?>
-    <?php if (isset($params['hide-controls']) AND $params['hide-controls']): ?>
+
+    <?php if (isset($params['hide-controls']) AND $params['hide-controls'] == 'true'): ?>
         <div class="text-center">
             <a href="<?php print admin_url('view:shop/action:orders'); ?>" class="btn btn-link"><?php _e("See all orders"); ?></a>
         </div>

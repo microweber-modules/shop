@@ -2,8 +2,8 @@
 use MicroweberPackages\View\View;
 
 $hide_ctrls = false;
-if (isset($params['hide-controlls']) and $params['hide-controlls']) {
-    $hide_ctrls = $params['hide-controlls'];
+if (isset($params['hide-controls']) and $params['hide-controls']) {
+    $hide_ctrls = $params['hide-controls'];
 }
 ?>
 
