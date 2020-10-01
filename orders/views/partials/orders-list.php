@@ -1,3 +1,10 @@
+<script>
+    $('body').on('click', '.card-order-holder', function () {
+        $(this).find('.js-change-button-styles a').toggleClass('bg-primary');
+        $(this).find('.js-change-button-styles a').toggleClass('text-white');
+    })
+</script>
+
 <?php if ($orders): ?>
     <?php foreach ($orders as $item) : ?>
         <?php $is_order = true; ?>
