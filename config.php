@@ -6,7 +6,7 @@ $config['ui_admin'] = false;
 $config['ui'] = false;
 $config['categories'] = "online shop";
 $config['position'] = 2;
-$config['version'] = 0.3;
+$config['version'] = 0.4;
 
 $config['permissions'] = [
     'index' => 'module.admin.shop.index',
